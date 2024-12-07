@@ -17,3 +17,12 @@ Comment
 ### Order By
 -- must come after SELECT and FROM
 -- Must come before LIMIT
+
+### DESC
+-- write it after the colum in your ORDER BY statement to sorty in descending order
+-- default is to sort in ascending order
+
+SELECT *
+FROM orders
+ORDER BY occurred_at DESC
+LIMIT 1000;
