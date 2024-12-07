@@ -97,4 +97,7 @@ SELECT *
 FROM accounts
 WHERE name != 'United Technologies'
 
--- REMEMBER: SQL requires single-quotes, not double-quotes, around text values like 'Exxon Mobil.'
+/* 
+REMEMBER: SQL requires single-quotes, not double-quotes, around text 
+values like 'Exxon Mobil.'
+*/
