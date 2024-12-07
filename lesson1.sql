@@ -79,3 +79,22 @@ SELECT *
 FROM orders
 WHERE gloss_amt_usd < 500
 LIMIT 10;
+
+-- Notice: WHERE statements do not need to ORDER BY unless we wantto order data
+
+-- Operators can be used with non-numeric values
+-- use make sure to add the non-numeric value within single quotes
+
+-- WHERE statements can also be used with non-numeric data (= !=)
+
+-- Example:
+
+SELECT *
+FROM accounts
+WHERE name = 'United Technologies'
+
+SELECT *
+FROM accounts
+WHERE name != 'United Technologies'
+
+-- REMEMBER: SQL requires single-quotes, not double-quotes, around text values like 'Exxon Mobil.'
