@@ -13,3 +13,7 @@ Multi
 Line
 Comment
 */
+
+### Order By
+-- must come after SELECT and FROM
+-- Must come before LIMIT
