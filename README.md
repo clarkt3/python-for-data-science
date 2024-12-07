@@ -45,5 +45,11 @@ SELECT name
 FROM accounts
 WHERE name LIKE '%s'
 ```
+### IN
 
+```mysql
+-- double quotation marks are need if an apostrophe is within text being pulled
+
+FROM accounts -- enter table you want to pull from after FROM keyword
+```
 
