@@ -49,7 +49,24 @@ WHERE name LIKE '%s'
 
 ```mysql
 -- double quotation marks are need if an apostrophe is within text being pulled
-
+SELECT name, primary_poc, sales_rep_id
 FROM accounts -- enter table you want to pull from after FROM keyword
+WHERE name IN ('Walmart', 'Target', 'Nordstrom');
+```
+### NOT
+
+```mysql
+-- NOT provides the inverse results for IN, LIKE, AND similar operators
+
+SELECT sales_rep_id, name
+FROM accounts
+WHERE sales_rep_id NOT IN (321500, 321570)
+ORDER BY sales_rep_id;
+
+SELECT *
+FROM accounts
+WHERE website NOT LIKE '%com%';
+
+
 ```
 
