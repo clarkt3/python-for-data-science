@@ -66,7 +66,50 @@ ORDER BY sales_rep_id;
 SELECT *
 FROM accounts
 WHERE website NOT LIKE '%com%';
-
-
 ```
+### NOT Exervises
 
+```mysql
+SELECT name, primary_poc, sales_rep_id
+FROM accounts
+WHERE name NOT IN ('Walmart', 'Target', 'Nordstrom');
+
+SELECT *
+FROM web_events
+WHERE channel NOT IN ('organic', 'adwords');
+
+-- Use the accounts table to find:
+
+-- 1. All companies whose names do not start with 'C'
+SELECT *
+FROM accounts
+WHERE name NOT LIKE 'C%'
+ORDER BY name;
+
+-- 2. All companies whose names do not contain the string 'one'
+SELECT *
+FROM accounts
+WHERE name NOT LIKE '%one%'
+ORDER BY name;
+
+-- 3. All compaines whose names do not end with 's'
+
+SELECT *
+FROM accounts
+WHERE name NOT LIKE '%s'
+ORDER BY name;
+```
+### AND operator
+
+```mysql
+-- AND filters based on multiple criteria
+-- AND operator allows you to run two complete logical statements
+
+SELECT *
+FROM orders
+WHERE standard_qty >= 1000 AND poster_qty = 0 AND gloss_qty = 0
+
+SELECT name
+FROM accounts
+WHERE name NOT BETWEEN 'C%' AND 's%';
+```
