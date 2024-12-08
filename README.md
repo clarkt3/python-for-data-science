@@ -67,7 +67,7 @@ SELECT *
 FROM accounts
 WHERE website NOT LIKE '%com%';
 ```
-### NOT Exervises
+### NOT Exercises
 
 ```mysql
 SELECT name, primary_poc, sales_rep_id
@@ -107,9 +107,22 @@ ORDER BY name;
 
 SELECT *
 FROM orders
-WHERE standard_qty >= 1000 AND poster_qty = 0 AND gloss_qty = 0
+WHERE standard_qty >= 1000 AND poster_qty = 0 AND gloss_qty = 0;
 
 SELECT name
 FROM accounts
-WHERE name NOT BETWEEN 'C%' AND 's%';
+WHERE name NOT IN ('C%', '%s') -- first attempt
+WHERE name NOT LIKE 'C%' AND name LIKE '%s'; -- better solution
+ORDER BY name; -- this line is for viewability
+
+SELECT gloss_qty
+FROM orders
+WHERE gloss_qty NOT BETWEEN 24 AND 29
+ORDER BY gloss_qty DESC; -- for readability
+-- end point values are included in query results
+
+SELECT channel, occurred_at
+FROM web_events
+WHERE occurred_at BETWEEN '2016-01-01' AND '2017-01-01'
+ORDER BY occurred_at DESC;
 ```
