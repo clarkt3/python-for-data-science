@@ -211,3 +211,30 @@ LIMIT 10;
 -- 2. Can I make changes in a single location not multiple locations?
 -- 3. Can I access and manipultae data quickly and efficiently?
 ```
+
+### Joins
+
+```mysql
+JOIN
+ ON /*specifies a logical statement to combine the table in 
+     FROM & JOIN statement*/
+
+-- EXAMPLE JOIN STATEMENT
+
+SELECT orders.*, accounts.*
+FROM orders
+JOIN accounts
+ON orders.account_id = accounts.id; -- holds the two cross-table links
+```
+### ON clause
+
+```mysql
+SELECT orders.standard_qty,
+       orders.gloss_qty,
+       orders.poster_qty, 
+       accounts.website,
+       accounts.primary_poc
+FROM orders 
+JOIN accounts
+ON orders.account_id = accounts.id;
+```
