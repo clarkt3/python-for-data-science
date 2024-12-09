@@ -126,3 +126,48 @@ FROM web_events
 WHERE occurred_at BETWEEN '2016-01-01' AND '2017-01-01'
 ORDER BY occurred_at DESC;
 ```
+### OR Operator
+
+```mysql
+/* Building logic to find which company's orders omitted one or more paper types*/
+
+SELECT  account_id,
+        occurred_at,
+        standard_qty,
+        gloss_qty,
+        poster_qty
+FROM orders
+WHERE standard_qty = 0 OR gloss_qty = 0 OR poster_qty = 0;
+
+-- OR can be combined with other operators with parenthesis
+
+-- Find orders where either gloss or poster qty is > 4000
+SELECT id
+FROM orders
+WHERE gloss_qty >= 4000 OR poster_qty >= 4000;
+
+/* find orders where standard_qty is 0 and either gloss or poster
+qty is over 1000 */
+
+SELECT *
+FROM orders
+WHERE standard_qty = 0 AND (gloss_qty > 1000 OR poster_qty > 1000)
+ORDER BY total -- for readability
+
+/* find all the company names that start with a 'C' or 'W', and 
+the primary contact contains 'ana' or 'Ana', but doesn't contain
+'eana' */
+
+SELECT name, primary_poc
+FROM accounts
+WHERE name 'C%' OR 'W%'
+
+-- if an example query mentions the word 'contains' use '%word%';
+
+ SELECT name, primary_poc
+ FROM accounts
+ WHERE (name LIKE 'C%' OR name LIKE 'W%')
+       AND ((primary_poc LIKE '%ana%' OR primary_poc LIKE '%Ana%')
+       AND primary_poc NOT LIKE '%eana%')
+ORDER BY primary_poc;
+```
