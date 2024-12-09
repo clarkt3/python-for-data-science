@@ -171,3 +171,34 @@ WHERE name 'C%' OR 'W%'
        AND primary_poc NOT LIKE '%eana%')
 ORDER BY primary_poc;
 ```
+
+### Recap
+
+```mysql
+-- commands learned so far
+SELECT: -- provide the coumns you want
+FROM: -- table where the columns exist
+LIMIT -- limits based number of rows returned
+ORDER BY -- orders table based on the column. Used with DESC
+WHERE -- conditional statement to filter your results
+LIKE -- WHERE Col LIKE '%me%' pulls rows where column has 'me'
+IN -- WHERE col IN ('y', 'N')
+NOT -- NOT is frequently used with LIKE and IN
+AND -- Filter rows where two or more ondition MUST be True
+OR -- filter rows where at least one condition must be met
+BETWEEN -- Ofter easier syntax than using an AND 
+
+-- KEY TERMS
+CREATE TABLE -- statement that creates a new table
+DROP TABLE -- statement that removes a table in a db
+-- Entity-relationship diagram (ERD) common way to view a db
+FROM -- specifies from which table(s) you want to select from
+SELECT -- allows you to read and display data; called a query
+
+-- Proper Order to write statements in
+SELECT col1, col2
+FROM table1
+WHERE col3 > 5 AND col4 LIKE '%os%'
+ORDER BY col5 DESC
+LIMIT 10;
+```
