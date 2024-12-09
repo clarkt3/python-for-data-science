@@ -202,3 +202,12 @@ WHERE col3 > 5 AND col4 LIKE '%os%'
 ORDER BY col5 DESC
 LIMIT 10;
 ```
+### Database Normailzation
+
+```mysql
+-- Things to think about for data normalization
+
+-- 1. Are the tables storing logical groupings of data?
+-- 2. Can I make changes in a single location not multiple locations?
+-- 3. Can I access and manipultae data quickly and efficiently?
+```
