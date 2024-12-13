@@ -242,5 +242,6 @@ ON accounts.id = orders.account_id;
 ```
 ### Alias
 
-```
+```mysql
+orders o -- one space after the orders name and an o will rename order to o
 ```
