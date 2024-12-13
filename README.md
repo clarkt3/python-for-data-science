@@ -243,5 +243,15 @@ ON accounts.id = orders.account_id;
 ### Alias
 
 ```mysql
-orders o -- one space after the orders name and an o will rename order to o
+orders o -- one space after the orders name and an 'o' will rename order to 'o'
+
+-- quiz questions
+
+-- 1. Mar all that are true
+    -- a. The on statment should always occur wit thte fk = pk
+    -- b. JOIN statements allow us to pull data from multiple SQL db
+
+-- 2. Select all statements that are true
+    -- a. Aliasing is common to shorten table names when we start JOINing tables
+
 ```
