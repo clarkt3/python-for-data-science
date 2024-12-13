@@ -228,6 +228,8 @@ ON orders.account_id = accounts.id; -- holds the two cross-table links
 ```
 ### ON clause
 
+ON is a link from our Primary Key (PK) to equal the Foreign Key (FK)
+ON PK = FK
 ```mysql
 SELECT orders.standard_qty,
        orders.gloss_qty,
@@ -236,5 +238,9 @@ SELECT orders.standard_qty,
        accounts.primary_poc
 FROM orders 
 JOIN accounts
-ON orders.account_id = accounts.id;
+ON accounts.id = orders.account_id;
+```
+### Alias
+
+```
 ```
