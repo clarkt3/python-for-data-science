@@ -303,3 +303,19 @@ ON a.sales_rep_id = s.id
 JOIN orders o
 ON o.account_id = a.id;
 ```
+
+### INNER JOIN
+
+```mysql
+-- INNER JOIN: only returns rows that appear in both tables
+
+/* To include data this is only in one of our tables in our 
+join statment, we use LEFT or RIGHT JOIN */
+
+-- stick to using left joins as they yield the same results
+-- consistency is most important esp. w/ multiple joins
+
+SELECT 
+FROM -- left table name
+LEFT JOIN -- right table name
+```
