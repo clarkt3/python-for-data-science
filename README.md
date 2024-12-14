@@ -255,3 +255,51 @@ orders o -- one space after the orders name and an 'o' will rename order to 'o'
     -- a. Aliasing is common to shorten table names when we start JOINing tables
 
 ```
+### Quiz: JOIN Questions Part 1
+
+
+```mysql
+-- Question 1
+-- My attempt
+SELECT r.name,
+       s.name,
+       a.name
+FROM region r
+JOIN sales_reps s
+ON s.region_id = r.id
+JOIN accounts a
+ON a.sales_rep_id = s.id;
+
+--- What I missed
+-- more than 2 columns have the same name; must alias them
+SELECT r.name region, s.name rep, a.name account
+FROM sales_reps s
+JOIN region r
+ON s.region_id = r.id
+JOIN accounts a
+ON a.sales_rep_id = s.id
+ORDER BY a.name;
+
+-- Question 2
+SELECT r.name region, a.name account, total_amount_usd
+
+SELECT r.name region_name,
+       a.name account_name,
+       o.total_amt_usd unit_price
+FROM accounts a
+JOIN orders o
+ON o.account_id = a.id
+JOIN region r
+ON a.region_id = r.id;
+
+-- Question 3
+SELECT r.name region, a.name account,
+       o.total_amt_usd/(o.total + 0.01) unit_price
+FROM region r
+JOIN sales_reps s
+ON s.region_id = r.id
+JOIN accounts a
+ON a.sales_rep_id = s.id
+JOIN orders o
+ON o.account_id = a.id;
+```
