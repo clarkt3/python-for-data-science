@@ -317,5 +317,13 @@ join statment, we use LEFT or RIGHT JOIN */
 
 SELECT 
 FROM -- left table name
-LEFT JOIN -- right table name
+
+OIN -- right table name
+OIN -- right table name
+OIN -- right table name
 ```
+#### LEFT and RIGHT JOINs
+
+```mysql
+
+OIN -- right table name ```
